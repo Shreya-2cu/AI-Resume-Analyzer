@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./App.css";
 import Header from './components/Header'
 import UploadSection from './components/UploadSection'
 import ResultSection from './components/ResultSection'
@@ -27,14 +28,15 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <UploadSection
-        setShowResult={setShowResult}
-        loading={loading}
-        setLoading={setLoading}
-      />
-      {showResult && <ResultSection result={result} />}    
-      
+      <div className="app-container">
+        <Header />
+        <UploadSection
+          setShowResult={setShowResult}
+          loading={loading}
+          setLoading={setLoading}
+        />
+        {showResult && <ResultSection result={result} />}
+      </div>
     </>
   )
 }

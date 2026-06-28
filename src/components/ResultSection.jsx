@@ -3,27 +3,33 @@ import React from "react";
 const ResultSection = ({ result }) => {
 
   return (
-    <div>
+    <div className="result-card">
       <h2>Analysis Result</h2>
 
-      <h3>ATS Score: {result.atsScore}/100</h3>
+      <h3 className="score">
+        ATS Score: {result.atsScore}/100
+      </h3>
 
       <h3>Resume Summary</h3>
       <p>{result.summary}</p>
 
       <h3>Skills Found</h3>
-      <ul>
+      <div className="skill-container">
         {result.skills.map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <span className="skill-chip" key={index}>
+            {skill}
+          </span>
         ))}
-      </ul>
+      </div>
 
       <h3>Missing Skills</h3>
-      <ul>
+      <div className="skill-container">
         {result.missingSkills.map((skill, index) => (
-          <li key={index}>{skill}</li>
+          <span className="missing-chip" key={index}>
+            {skill}
+          </span>
         ))}
-      </ul>
+      </div>
 
       <h3>Strengths</h3>
       <ul>
